@@ -3,12 +3,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .navbar-custom {
-  background: linear-gradient(90deg, #0d47a1 0%, #1565c0 100%) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, #ff6b81 0%, #ff4757 100%) !important;
+  box-shadow: 0 2px 12px rgba(255, 71, 87, 0.6);
 }
 
 .navbar-custom .navbar-brand {
@@ -32,6 +32,7 @@
   color: #fff !important;
   border-bottom-color: #fff;
   padding-bottom: 2px;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
 }
 
 .main-content {
@@ -51,6 +52,11 @@
   padding: 2.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   animation: slideIn 0.4s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.page-container:hover {
+  box-shadow: 0 0 25px rgba(255,71,87,0.5);
 }
 
 @keyframes slideIn {
@@ -65,11 +71,13 @@
 }
 
 .page-container h2 {
-  color: #0d47a1;
+  color: #ff4757;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #1565c0;
-  font-weight: 700;
+  border-bottom: 3px solid #ff6b81;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .page-container h3 {
@@ -140,16 +148,17 @@
 }
 
 .product-details-card {
-  background: #f8f9fa;
+  background: white;
   padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  border: 2px solid #ff4757;
   transition: all 0.3s ease;
+  transform: perspective(600px);
 }
 
 .product-details-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255,71,87,0.5);
+  transform: perspective(600px) rotateY(5deg) translateZ(5px);
 }
 
 .product-details-card h3 {
@@ -177,8 +186,8 @@
 }
 
 .product-form .form-control:focus {
-  border-color: #1565c0;
-  box-shadow: 0 0 0 0.2rem rgba(21, 101, 192, 0.25);
+  border-color: #ff4757;
+  box-shadow: 0 0 0 0.2rem rgba(255,71,87,0.25);
 }
 
 .billing-details-card {
@@ -186,16 +195,17 @@
 }
 
 .billing-details-card .card {
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #1565c0 !important;
+  border: 2px solid #ff4757 !important;
 }
 
 .billing-details-card .card-header {
-  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%) !important;
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%) !important;
   color: white;
   font-weight: 600;
   padding: 1rem;
+  text-transform: uppercase;
 }
 
 .billing-row {
@@ -268,8 +278,8 @@
 
 .form-section .form-control:focus,
 .form-section .form-select:focus {
-  border-color: #1565c0;
-  box-shadow: 0 0 0 0.2rem rgba(21, 101, 192, 0.25);
+  border-color: #ff4757;
+  box-shadow: 0 0 0 0.2rem rgba(255,71,87,0.25);
 }
 
 /* Buttons */
@@ -277,6 +287,18 @@
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #2ed573 0%, #1e90ff 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(46, 213, 115, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(46, 213, 115, 0.6);
 }
 
 .btn {
@@ -293,8 +315,19 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
   border: none;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  box-shadow: 0 4px 15px rgba(255,71,87,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255,71,87,0.6);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -354,9 +387,10 @@
 }
 
 .posts-table thead {
-  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: .5px;
 }
 
 .posts-table thead th {
@@ -372,8 +406,9 @@
 }
 
 .posts-table tbody tr:hover {
-  background: #f8f9fa;
-  transition: background 0.3s ease;
+  background: rgba(255,71,87,0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
+  transform: translateX(7px) scale(1.02);
 }
 
 .posts-table .title-cell,
@@ -476,7 +511,8 @@ body.dark-mode .page-container {
 }
 
 body.dark-mode .navbar-custom {
-  background: #212529 !important;
+  background: linear-gradient(90deg, #ff6b81 0%, #ff4757 100%) !important;
+  box-shadow: 0 2px 12px rgba(255, 71, 87, 0.6);
 }
 
 body.dark-mode .nav-link-custom {
@@ -488,11 +524,13 @@ body.dark-mode .nav-link-custom:hover {
 }
 
 body.dark-mode .btn-primary {
-  background: #0d6efd;
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+  color: white;
 }
 
 body.dark-mode .btn-secondary {
-  background: #6c757d;
+  background: linear-gradient(135deg, #2ed573 0%, #1e90ff 100%);
+  color: white;
 }
 
 body.dark-mode .form-section,
