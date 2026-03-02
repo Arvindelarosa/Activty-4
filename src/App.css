@@ -47,8 +47,8 @@
   border-bottom-color: #fff;
   padding-bottom: 2px;
   text-shadow: 0 0 6px rgba(255,255,255,0.8);
+  transform: scale(1.05);
 }
-
 .main-content {
   flex: 1;
   padding: 2rem 0;
