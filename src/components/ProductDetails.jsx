@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, Form, Alert } from 'react-bootstrap'
+import confetti from 'canvas-confetti'
 import { useAlert } from './AlertProvider'
 import { alertSuccess, alertError } from '../utils/sweetAlert'
 
@@ -20,6 +21,12 @@ export default function ProductDetails({ onCalculate, onReset }) {
       })
       showAlert('Price calculated successfully!', 'success', 3000)
       alertSuccess('Price calculated successfully!')
+      // explosive confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      })
     } else {
       showAlert('Please fill in all fields', 'warning', 4000)
       alertError('Please fill in all fields')
@@ -33,6 +40,11 @@ export default function ProductDetails({ onCalculate, onReset }) {
     onReset()
     showAlert('Reset complete', 'info', 2000)
     alertSuccess('Reset complete')
+    confetti({
+      particleCount: 30,
+      spread: 60,
+      origin: { y: 0.4 }
+    })
   }
 
   return (
