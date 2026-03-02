@@ -115,13 +115,16 @@
 }
 
 .concept-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px) rotateZ(1deg);
+  box-shadow: 0 12px 30px rgba(255,71,87,0.5) !important;
 }
 
 .concept-card .card-header {
   font-weight: 600;
   padding: 1rem;
+  background: linear-gradient(135deg, #ff6b81, #ff4757) !important;
+  color: white;
+  animation: gradientBG 10s ease infinite;
 }
 
 .concept-card .card-body {
